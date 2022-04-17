@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\MusicPlayerScript.cs" />
+    <Compile Include="Assets\Scripts\PauseMenuScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Sc-Fi Music\Note.txt" />
