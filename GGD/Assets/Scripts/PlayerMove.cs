@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     public CharacterController controller;
-    public float speed = 6.0f;
+    public float speed = 12f;
     public bool gravityChange = false; //gravity is currently changing
     public bool gravityReversed = false; //gravity is currently reversed
 
@@ -31,6 +31,7 @@ public class PlayerMove : MonoBehaviour
         {
             float horizontal = Input.GetAxisRaw("Horizontal");
             float vertical = Input.GetAxisRaw("Vertical");
+            
             Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
 
             if (direction.magnitude >= 0.1f)
