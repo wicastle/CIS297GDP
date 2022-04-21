@@ -5,9 +5,10 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     public CharacterController controller;
-    public float speed = 12f;
+    public float speed = 6.0f;
     public bool gravityChange = false; //gravity is currently changing
     public bool gravityReversed = false; //gravity is currently reversed
+    public bool canChange = true;
 
     private void Start()
     {
@@ -16,52 +17,39 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
-        if (gravityChange)
+        Vector3 direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized;
+        if (!gravityReversed)
         {
-            if (!gravityReversed)
-            {
-                controller.Move(new Vector3(0f, 1f, 0f) * 10.0f * Time.deltaTime);
-            }
-            else
-            {
-                controller.Move(new Vector3(0f, -1f, 0f) * 10.0f * Time.deltaTime);
-            }
+            direction.y = -1f;
         }
         else
         {
-            float horizontal = Input.GetAxisRaw("Horizontal");
-            float vertical = Input.GetAxisRaw("Vertical");
-            
-            Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
+            direction.y = 1f;
+        }
 
-            if (direction.magnitude >= 0.1f)
-            {
-                float angle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
-                transform.rotation = Quaternion.Euler(0f, angle, 0f);
-                controller.Move(direction * speed * Time.deltaTime);
-            }
+        controller.Move(direction * speed * Time.deltaTime);
 
-            if (Input.GetKey(KeyCode.Space))
-            {
-                gravityChange = true;
-            }
+        if (Input.GetKey(KeyCode.Space) && canChange)
+        {
+            gravityReversed = !gravityReversed;
+            canChange = false;
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
-        if (!gravityReversed && other.gameObject.tag == "Ceiling")
+        if (other.gameObject.tag == "Ceiling")
         {
             Debug.Log("Ceiling");
-            gravityReversed = true;
-            gravityChange = false;
+            Debug.Log(other.relativeVelocity);
+            canChange = true;
         }
 
-        if (gravityReversed && other.gameObject.tag == "Ground")
+        if (other.gameObject.tag == "Ground")
         {
             Debug.Log("Ground");
-            gravityReversed = false;
-            gravityChange = false;
+            Debug.Log(other.relativeVelocity);
+            canChange = true;
         }
     }
 }
