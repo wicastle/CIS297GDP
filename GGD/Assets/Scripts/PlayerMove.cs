@@ -10,6 +10,9 @@ public class PlayerMove : MonoBehaviour
     public bool gravityReversed = false; //gravity is currently reversed
     public bool canChange = true;
 
+    public bool canDrop = false;
+    public Transform pickUpTransform;
+
     private void Awake()
     {
         Time.timeScale = 1;
@@ -39,6 +42,12 @@ public class PlayerMove : MonoBehaviour
             gravityReversed = !gravityReversed;
             canChange = false;
         }
+
+        if (Input.GetKey(KeyCode.E) && canDrop)
+        {
+            pickUpTransform.parent = null;
+            pickUpTransform = null;
+        }
     }
 
     private void OnCollisionEnter(Collision other)
@@ -55,6 +64,13 @@ public class PlayerMove : MonoBehaviour
             Debug.Log("Ground");
             Debug.Log(other.relativeVelocity);
             canChange = true;
+        }
+
+        if (other.gameObject.tag == "Movable")
+        {
+            other.transform.parent = this.transform;
+            pickUpTransform = other.transform;
+            canDrop = true;
         }
     }
 }
