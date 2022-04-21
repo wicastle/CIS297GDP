@@ -1,5 +1,6 @@
 sceneSetups:
-- path: Assets/Scenes/SampleScene.unity
+- path: Assets/TZ_Futuristic Panel Textures Lite/scene_Futuristic Panel Textures
+    Lite.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
