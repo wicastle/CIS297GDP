@@ -58,15 +58,15 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\DoNotDestroyMusic.cs" />
     <Compile Include="Assets\Pause.cs" />
+    <Compile Include="Assets\Scripts\SetVolume.cs" />
     <Compile Include="Assets\PlayerTrigger.cs" />
+    <Compile Include="Assets\Scripts\DoNotDestroySlider.cs" />
     <Compile Include="Assets\Scripts\PauseMenuScript.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\MusicLoaderScript.cs" />
     <Compile Include="Assets\Scripts\PlayerMove.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\MusicPlayerScript.cs" />
-    <Compile Include="Assets\Scripts\MusicLoaderScript.cs" />
-    <Compile Include="Assets\Scripts\DoNotDestroySlider.cs" />
-    <Compile Include="Assets\Scripts\SetVolume.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Sc-Fi Music\Note.txt" />
