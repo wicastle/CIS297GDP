@@ -22,7 +22,7 @@ public class PlayerMove : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("Started!");
+        /*Debug.Log("Started!");
         if (!Pause.isPaused)
         {
             Cursor.lockState = CursorLockMode.Locked;
@@ -30,45 +30,44 @@ public class PlayerMove : MonoBehaviour
         else
         {
             Cursor.lockState = CursorLockMode.None;
-        }
+        }*/
+        Cursor.visible = false;
     }
 
     void Update()
     {
-        if (!Pause.isPaused)
+
+        Vector3 direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized;
+        
+        if (direction.magnitude >= 0.1f)
         {
-            Vector3 direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized;
+            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+            direction = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+        }
 
-            if (direction.magnitude >= 0.1f)
-            {
-                float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
-                float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
-                transform.rotation = Quaternion.Euler(0f, angle, 0f);
-                direction = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            }
+        if (gravityReversed)
+        {
+            direction.y = 1f;
+        }
+        else
+        {
+            direction.y = -1f;
+        }
 
-            if (gravityReversed)
-            {
-                direction.y = 1f;
-            }
-            else
-            {
-                direction.y = -1f;
-            }
+        controller.Move(direction.normalized * speed * Time.deltaTime);
 
-            controller.Move(direction.normalized * speed * Time.deltaTime);
+        if (Input.GetKey(KeyCode.Space) && canChange)
+        {
+            gravityReversed = !gravityReversed;
+            canChange = false;
+        }
 
-            if (Input.GetKey(KeyCode.Space) && canChange)
-            {
-                gravityReversed = !gravityReversed;
-                canChange = false;
-            }
-
-            if (Input.GetKey(KeyCode.E) && canDrop)
-            {
-                pickUpTransform.parent = null;
-                pickUpTransform = null;
-            }
+        if (Input.GetKey(KeyCode.E) && canDrop)
+        {
+            pickUpTransform.parent = null;
+            pickUpTransform = null;
         }
     }
 
