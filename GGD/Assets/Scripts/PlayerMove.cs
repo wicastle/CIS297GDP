@@ -6,7 +6,6 @@ public class PlayerMove : MonoBehaviour
 {
     public CharacterController controller;
     public float speed = 6.0f;
-    public bool gravityChange = false; //gravity is currently changing
     public bool gravityReversed = false; //gravity is currently reversed
     public bool canChange = true;
 
@@ -36,19 +35,17 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision other)
+    public void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Ceiling")
-        {
-            Debug.Log("Ceiling");
-            Debug.Log(other.relativeVelocity);
-            canChange = true;
-        }
-
+        Debug.Log("Collision");
         if (other.gameObject.tag == "Ground")
         {
             Debug.Log("Ground");
-            Debug.Log(other.relativeVelocity);
+            canChange = true;
+        }
+        if (other.gameObject.tag == "Ceiling")
+        {
+            Debug.Log("Ceiling");
             canChange = true;
         }
     }
