@@ -22,12 +22,21 @@ public class PlayerMove : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("Started!");
-        Cursor.lockState = CursorLockMode.Locked;
+        /*Debug.Log("Started!");
+        if (!Pause.isPaused)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }*/
+        Cursor.visible = false;
     }
 
     void Update()
     {
+
         Vector3 direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized;
         
         if (direction.magnitude >= 0.1f)

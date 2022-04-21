@@ -10,26 +10,38 @@ public class Pause : MonoBehaviour
 
     public GameObject pauseMenuUi;
 
+    private void Start()
+    {
+        isPaused = false;
+        pauseMenuUi.SetActive(false);
+    }
+
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            Debug.Log("pressed esc");
             if(isPaused)
             {
                 resume();
+                Debug.Log("resume");
             }
             else
             {
                 pause();
+                Debug.Log("pause");
             }
         }
+
     }
 
     public void resume()
     {
         pauseMenuUi.SetActive(false);
         Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         isPaused = false;
     }
 
@@ -37,6 +49,8 @@ public class Pause : MonoBehaviour
     {
         pauseMenuUi.SetActive(true);
         Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         isPaused = true;
     }
 
@@ -48,6 +62,7 @@ public class Pause : MonoBehaviour
 
     public void LoadQuit()
     {
+        Time.timeScale = 1f;
         Application.Quit();
     }
 

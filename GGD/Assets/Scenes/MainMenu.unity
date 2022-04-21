@@ -2280,6 +2280,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1850023332}
   - component: {fileID: 1850023333}
+  - component: {fileID: 1850023334}
   m_Layer: 0
   m_Name: MusicPlayer
   m_TagString: Untagged
@@ -2316,6 +2317,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AudioSource: {fileID: 1660652827}
   VolumeSlider: {fileID: 1892349199}
+--- !u!114 &1850023334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850023331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92d826319923d2c4a82cacdd0eddf844, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1892349197
 GameObject:
   m_ObjectHideFlags: 0
