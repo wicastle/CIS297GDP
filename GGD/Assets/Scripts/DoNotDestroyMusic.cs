@@ -1,18 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DoNotDestroyMusic : MonoBehaviour
 {
-    private static DoNotDestroyMusic instance = null;
-    public static DoNotDestroyMusic Instance
-    {
-        get { return instance; }
-    }
+    public static DoNotDestroyMusic instance = null;
 
-    private void Awake()
+    void Awake()
     {
-        instance = this;
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        else
+        {
+            instance = this;
+        }
         DontDestroyOnLoad(this.gameObject);
     }
 
