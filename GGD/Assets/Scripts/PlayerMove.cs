@@ -10,6 +10,11 @@ public class PlayerMove : MonoBehaviour
     public bool gravityReversed = false; //gravity is currently reversed
     public bool canChange = true;
 
+    private void Awake()
+    {
+        Time.timeScale = 1;
+    }
+
     private void Start()
     {
         Debug.Log("Started!");

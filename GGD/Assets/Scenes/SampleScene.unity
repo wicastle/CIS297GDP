@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -551,6 +551,26 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8569969472449119795, guid: 97ef08cc7411beb4b833c8331d89702f, type: 3}
+      propertyPath: deathMat
+      value: 
+      objectReference: {fileID: 2100000, guid: b88a61201a9ccb04f9c37eb6e0a493f2, type: 2}
+    - target: {fileID: 8569969472449119795, guid: 97ef08cc7411beb4b833c8331d89702f, type: 3}
+      propertyPath: playerMesh
+      value: 
+      objectReference: {fileID: 768623797}
+    - target: {fileID: 8569969472449119795, guid: 97ef08cc7411beb4b833c8331d89702f, type: 3}
+      propertyPath: playerMesh1
+      value: 
+      objectReference: {fileID: 768623797}
+    - target: {fileID: 8569969472449119795, guid: 97ef08cc7411beb4b833c8331d89702f, type: 3}
+      propertyPath: playerMesh2
+      value: 
+      objectReference: {fileID: 500017436}
+    - target: {fileID: 8569969472449119795, guid: 97ef08cc7411beb4b833c8331d89702f, type: 3}
+      propertyPath: playerGraphic
+      value: 
+      objectReference: {fileID: 768623795}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97ef08cc7411beb4b833c8331d89702f, type: 3}
 --- !u!1 &461046278 stripped
@@ -1589,6 +1609,26 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8569969472449119795, guid: 97ef08cc7411beb4b833c8331d89702f, type: 3}
+      propertyPath: deathMat
+      value: 
+      objectReference: {fileID: 2100000, guid: b88a61201a9ccb04f9c37eb6e0a493f2, type: 2}
+    - target: {fileID: 8569969472449119795, guid: 97ef08cc7411beb4b833c8331d89702f, type: 3}
+      propertyPath: playerMesh
+      value: 
+      objectReference: {fileID: 768623797}
+    - target: {fileID: 8569969472449119795, guid: 97ef08cc7411beb4b833c8331d89702f, type: 3}
+      propertyPath: playerMesh1
+      value: 
+      objectReference: {fileID: 768623797}
+    - target: {fileID: 8569969472449119795, guid: 97ef08cc7411beb4b833c8331d89702f, type: 3}
+      propertyPath: playerMesh2
+      value: 
+      objectReference: {fileID: 500017436}
+    - target: {fileID: 8569969472449119795, guid: 97ef08cc7411beb4b833c8331d89702f, type: 3}
+      propertyPath: playerGraphic
+      value: 
+      objectReference: {fileID: 768623795}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97ef08cc7411beb4b833c8331d89702f, type: 3}
 --- !u!1 &1074848829
@@ -1729,6 +1769,26 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8569969472449119795, guid: 97ef08cc7411beb4b833c8331d89702f, type: 3}
+      propertyPath: deathMat
+      value: 
+      objectReference: {fileID: 2100000, guid: b88a61201a9ccb04f9c37eb6e0a493f2, type: 2}
+    - target: {fileID: 8569969472449119795, guid: 97ef08cc7411beb4b833c8331d89702f, type: 3}
+      propertyPath: playerMesh
+      value: 
+      objectReference: {fileID: 768623797}
+    - target: {fileID: 8569969472449119795, guid: 97ef08cc7411beb4b833c8331d89702f, type: 3}
+      propertyPath: playerMesh1
+      value: 
+      objectReference: {fileID: 768623797}
+    - target: {fileID: 8569969472449119795, guid: 97ef08cc7411beb4b833c8331d89702f, type: 3}
+      propertyPath: playerMesh2
+      value: 
+      objectReference: {fileID: 500017436}
+    - target: {fileID: 8569969472449119795, guid: 97ef08cc7411beb4b833c8331d89702f, type: 3}
+      propertyPath: playerGraphic
+      value: 
+      objectReference: {fileID: 768623795}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97ef08cc7411beb4b833c8331d89702f, type: 3}
 --- !u!1 &1335516570 stripped
@@ -2127,6 +2187,26 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8569969472449119795, guid: 97ef08cc7411beb4b833c8331d89702f, type: 3}
+      propertyPath: deathMat
+      value: 
+      objectReference: {fileID: 2100000, guid: b88a61201a9ccb04f9c37eb6e0a493f2, type: 2}
+    - target: {fileID: 8569969472449119795, guid: 97ef08cc7411beb4b833c8331d89702f, type: 3}
+      propertyPath: playerMesh
+      value: 
+      objectReference: {fileID: 768623797}
+    - target: {fileID: 8569969472449119795, guid: 97ef08cc7411beb4b833c8331d89702f, type: 3}
+      propertyPath: playerMesh1
+      value: 
+      objectReference: {fileID: 768623797}
+    - target: {fileID: 8569969472449119795, guid: 97ef08cc7411beb4b833c8331d89702f, type: 3}
+      propertyPath: playerMesh2
+      value: 
+      objectReference: {fileID: 500017436}
+    - target: {fileID: 8569969472449119795, guid: 97ef08cc7411beb4b833c8331d89702f, type: 3}
+      propertyPath: playerGraphic
+      value: 
+      objectReference: {fileID: 768623795}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97ef08cc7411beb4b833c8331d89702f, type: 3}
 --- !u!1 &1478553224 stripped
@@ -2880,6 +2960,26 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8569969472449119795, guid: 97ef08cc7411beb4b833c8331d89702f, type: 3}
+      propertyPath: deathMat
+      value: 
+      objectReference: {fileID: 2100000, guid: b88a61201a9ccb04f9c37eb6e0a493f2, type: 2}
+    - target: {fileID: 8569969472449119795, guid: 97ef08cc7411beb4b833c8331d89702f, type: 3}
+      propertyPath: playerMesh
+      value: 
+      objectReference: {fileID: 768623797}
+    - target: {fileID: 8569969472449119795, guid: 97ef08cc7411beb4b833c8331d89702f, type: 3}
+      propertyPath: playerMesh1
+      value: 
+      objectReference: {fileID: 768623797}
+    - target: {fileID: 8569969472449119795, guid: 97ef08cc7411beb4b833c8331d89702f, type: 3}
+      propertyPath: playerMesh2
+      value: 
+      objectReference: {fileID: 500017436}
+    - target: {fileID: 8569969472449119795, guid: 97ef08cc7411beb4b833c8331d89702f, type: 3}
+      propertyPath: playerGraphic
+      value: 
+      objectReference: {fileID: 768623795}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97ef08cc7411beb4b833c8331d89702f, type: 3}
 --- !u!1 &1801464313 stripped
@@ -3664,6 +3764,26 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8569969472449119795, guid: 97ef08cc7411beb4b833c8331d89702f, type: 3}
+      propertyPath: deathMat
+      value: 
+      objectReference: {fileID: 2100000, guid: b88a61201a9ccb04f9c37eb6e0a493f2, type: 2}
+    - target: {fileID: 8569969472449119795, guid: 97ef08cc7411beb4b833c8331d89702f, type: 3}
+      propertyPath: playerMesh
+      value: 
+      objectReference: {fileID: 768623797}
+    - target: {fileID: 8569969472449119795, guid: 97ef08cc7411beb4b833c8331d89702f, type: 3}
+      propertyPath: playerMesh1
+      value: 
+      objectReference: {fileID: 768623797}
+    - target: {fileID: 8569969472449119795, guid: 97ef08cc7411beb4b833c8331d89702f, type: 3}
+      propertyPath: playerMesh2
+      value: 
+      objectReference: {fileID: 500017436}
+    - target: {fileID: 8569969472449119795, guid: 97ef08cc7411beb4b833c8331d89702f, type: 3}
+      propertyPath: playerGraphic
+      value: 
+      objectReference: {fileID: 768623795}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97ef08cc7411beb4b833c8331d89702f, type: 3}
 --- !u!1 &2133434603 stripped
