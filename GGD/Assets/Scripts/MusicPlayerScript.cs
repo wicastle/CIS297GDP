@@ -5,20 +5,29 @@ using UnityEngine.UI;
 
 public class MusicPlayerScript : MonoBehaviour
 {
+    public static MusicPlayerScript instance = null;
     public AudioSource AudioSource;
-    public Slider VolumeSlider;
 
-    // Start is called before the first frame update
-    void Start()
+
+    void Awake()
     {
-        AudioSource.Play();
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        else
+        {
+            instance = this;
+        }
+        DontDestroyOnLoad(this.gameObject);
     }
+
 
     // Update is called once per frame
     void Update()
     {
-        AudioSource.volume = VolumeSlider.value;
-        PlayerPrefs.SetFloat("Volume", VolumeSlider.value);
+        AudioSource.volume = PlayerPrefs.GetFloat("Volume");
     }
 
 }
