@@ -5,8 +5,10 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     public CharacterController controller;
+    public Transform cam;
     public float speed = 6.0f;
-    public bool gravityChange = false; //gravity is currently changing
+    public float turnSmoothTime = 0.1f;
+    float turnSmoothVelocity;
     public bool gravityReversed = false; //gravity is currently reversed
     public bool canChange = true;
 
@@ -21,21 +23,31 @@ public class PlayerMove : MonoBehaviour
     private void Start()
     {
         Debug.Log("Started!");
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
     {
         Vector3 direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized;
-        if (!gravityReversed)
+        
+        if (direction.magnitude >= 0.1f)
         {
-            direction.y = -1f;
+            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+            direction = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
         }
-        else
+
+        if (gravityReversed)
         {
             direction.y = 1f;
         }
+        else
+        {
+            direction.y = -1f;
+        }
 
-        controller.Move(direction * speed * Time.deltaTime);
+        controller.Move(direction.normalized * speed * Time.deltaTime);
 
         if (Input.GetKey(KeyCode.Space) && canChange)
         {
@@ -55,14 +67,12 @@ public class PlayerMove : MonoBehaviour
         if (other.gameObject.tag == "Ceiling")
         {
             Debug.Log("Ceiling");
-            Debug.Log(other.relativeVelocity);
             canChange = true;
         }
 
         if (other.gameObject.tag == "Ground")
         {
             Debug.Log("Ground");
-            Debug.Log(other.relativeVelocity);
             canChange = true;
         }
 
